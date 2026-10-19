@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Persona } from '../../models/persona';
+import {LocalStorage} from '../../services/local-storage';
 
 @Component({
   imports: [],
@@ -6,4 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './tabla.css',
   templateUrl: './tabla.html',
 })
-export class Tabla {}
+export class Tabla {
+    personas: Persona[] = [];
+
+    constructor(
+      private localStorage: LocalStorage
+    ) {}
+
+    ngOnInit(): void {
+        this.cargarDatos();
+    }
+
+    cargarDatos(){
+      this.personas = this.localStorage.obtenerTodos();
+    }
+
+
+}

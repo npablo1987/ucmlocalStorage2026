@@ -1,1 +1,24 @@
-<p>tabla works!</p>
+<div class="contenedor-tabla">
+  <h2>Lista de Personas</h2>
+  <table class="tabla">
+    <thead>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Edad</th>
+          <th>Ciudad</th>
+    </thead>
+    <tbody>
+        @for (persona of personas; track $index){
+          <tr>
+            <td>{{persona.nombres}}</td>
+            <td>{{persona.apellidos}}</td>
+            <td>{{persona.correo}}</td>
+            <td>{{persona.edad}}</td>
+            <td>{{persona.ciudad}}</td>
+          </tr>
+        }
+    </tbody>
+  </table>
+
+</div>

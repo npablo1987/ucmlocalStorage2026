@@ -1,1 +1,34 @@
-<p>formulario works!</p>
+<div class="contendor-formulario">
+
+  <form class="formulario" (ngSubmit)="guardar()">
+      <h2>Nueva Persona</h2>
+
+      <label>
+        Nombres
+        <input type="text" name="nombres" [(ngModel)]="persona.nombres" required />
+      </label>
+
+      <label>
+        Apellidos
+        <input type="text" name="apellidos" [(ngModel)]="persona.apellidos" required />
+      </label>
+
+      <label>
+        Correo
+        <input type="text" name="correo" [(ngModel)]="persona.correo" required />
+      </label>
+
+      <label>
+        Edad
+        <input type="number" name="edad" [(ngModel)]="persona.edad" required />
+      </label>
+
+      <label>
+        Ciudad
+        <input type="text" name="ciudad" [(ngModel)]="persona.ciudad" required />
+      </label>
+
+    <button type="submit"> Guardar </button>
+  </form>
+
+</div>
